@@ -108,7 +108,7 @@ function Header() {
           </div>
           <div className="col-lg-4 col-6 text-right">
             <p className="m-0">Customer Service</p>
-            <h5 className="m-0">+012 345 6789</h5>
+            <h5 className="m-0">+92 324 4135239</h5>
           </div>
         </div>
       </div>
@@ -196,10 +196,10 @@ function Header() {
                   <a href="index.html" className="nav-item nav-link active">
                     Home
                   </a>
-                  <a href="shop.html" className="nav-item nav-link">
+                  <a href="/shop" className="nav-item nav-link">
                     Shop
                   </a>
-                  <a href="detail.html" className="nav-item nav-link">
+                  <a href="/detail" className="nav-item nav-link">
                     Shop Detail
                   </a>
                   <div className="nav-item dropdown">

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Header from '../components/UI/Header';
+import Layout from '../components/UI/Layout';
 import Featured from '../components/UI/Featured';
 import Categories from '../components/UI/Categories';
 
@@ -13,9 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <Featured />
-      <Categories />
+      <Layout>
+        <Featured />
+        <Categories />
+      </Layout>
     </div>
   );
 }
