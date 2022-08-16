@@ -1,0 +1,16 @@
+svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.fa-bars {
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.fa-heart,
+.fa-cart-shopping {
+  color: $primary;
+  margin-right: 5px;
+}

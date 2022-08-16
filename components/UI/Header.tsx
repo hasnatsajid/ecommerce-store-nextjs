@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faBars, faAngleDown, faAngleRight, faHeart, faShoppingCart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 function Header() {
   return (
     <div className="header">
@@ -70,13 +73,13 @@ function Header() {
             </div>
             <div className="d-inline-flex align-items-center d-block d-lg-none">
               <a href="" className="btn px-0 ml-2">
-                <i className="fas fa-heart text-dark"></i>
+                <FontAwesomeIcon icon={faHeart} />
                 <span className="badge text-dark border border-dark rounded-circle" style={{ paddingBottom: '2px' }}>
                   0
                 </span>
               </a>
               <a href="" className="btn px-0 ml-2">
-                <i className="fas fa-shopping-cart text-dark"></i>
+                <FontAwesomeIcon icon={faCartShopping} />
                 <span className="badge text-dark border border-dark rounded-circle" style={{ paddingBottom: '2px' }}>
                   0
                 </span>
@@ -87,7 +90,7 @@ function Header() {
         <div className="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
           <div className="col-lg-4">
             <a href="" className="text-decoration-none">
-              <span className="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
+              <span className="h1 text-uppercase text-primary bg-dark px-2">Hassuu</span>
               <span className="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
             </a>
           </div>
@@ -97,7 +100,7 @@ function Header() {
                 <input type="text" className="form-control" placeholder="Search for products" />
                 <div className="input-group-append">
                   <span className="input-group-text bg-transparent text-primary">
-                    <i className="fa fa-search"></i>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </span>
                 </div>
               </div>
@@ -122,9 +125,10 @@ function Header() {
               style={{ height: '65px', padding: '0 30px' }}
             >
               <h6 className="text-dark m-0">
-                <i className="fa fa-bars mr-2"></i>Categories
+                <FontAwesomeIcon icon={faBars} className="fa-bars" />
+                Categories
               </h6>
-              <i className="fa fa-angle-down text-dark"></i>
+              <FontAwesomeIcon icon={faAngleDown} />
             </a>
             <nav
               className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
@@ -134,7 +138,7 @@ function Header() {
               <div className="navbar-nav w-100">
                 <div className="nav-item dropdown dropright">
                   <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
-                    Dresses <i className="fa fa-angle-right float-right mt-1"></i>
+                    Dresses <FontAwesomeIcon icon={faAngleRight} />
                   </a>
                   <div className="dropdown-menu position-absolute rounded-0 border-0 m-0">
                     <a href="" className="dropdown-item">
@@ -200,7 +204,7 @@ function Header() {
                   </a>
                   <div className="nav-item dropdown">
                     <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
-                      Pages <i className="fa fa-angle-down mt-1"></i>
+                      Pages <FontAwesomeIcon icon={faAngleDown} />
                     </a>
                     <div className="dropdown-menu bg-primary rounded-0 border-0 m-0">
                       <a href="cart.html" className="dropdown-item">
@@ -217,13 +221,13 @@ function Header() {
                 </div>
                 <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
                   <a href="" className="btn px-0">
-                    <i className="fas fa-heart text-primary"></i>
+                    <FontAwesomeIcon icon={faHeart} />
                     <span className="badge text-secondary border border-secondary rounded-circle" style={{ paddingBottom: '2px' }}>
                       0
                     </span>
                   </a>
                   <a href="" className="btn px-0 ml-3">
-                    <i className="fas fa-shopping-cart text-primary"></i>
+                    <FontAwesomeIcon icon={faCartShopping} />
                     <span className="badge text-secondary border border-secondary rounded-circle" style={{ paddingBottom: '2px' }}>
                       0
                     </span>

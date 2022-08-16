@@ -1,6 +1,8 @@
 import Head from 'next/head';
 
 import Header from '../components/UI/Header';
+import Featured from '../components/UI/Featured';
+import Categories from '../components/UI/Categories';
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       </Head>
 
       <Header />
+      <Featured />
+      <Categories />
     </div>
   );
 }
