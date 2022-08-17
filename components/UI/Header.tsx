@@ -1,8 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBars, faAngleDown, faAngleRight, faHeart, faShoppingCart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
+import Link from 'next/link';
+
 import type { RootState } from '../../store/store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Header() {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -94,7 +96,7 @@ function Header() {
         </div>
         <div className="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
           <div className="col-lg-4">
-            <a href="" className="text-decoration-none">
+            <a href="/" className="text-decoration-none">
               <span className="h1 text-uppercase text-primary bg-dark px-2">Hassuu</span>
               <span className="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
             </a>
@@ -198,7 +200,7 @@ function Header() {
               </button>
               <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div className="navbar-nav mr-auto py-0">
-                  <a href="index.html" className="nav-item nav-link active">
+                  <a href="/" className="nav-item nav-link active">
                     Home
                   </a>
                   <a href="/shop" className="nav-item nav-link">
@@ -212,16 +214,22 @@ function Header() {
                       Pages <FontAwesomeIcon icon={faAngleDown} />
                     </a>
                     <div className="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                      <a href="cart.html" className="dropdown-item">
+                      <Link href="cart.html" className="dropdown-item">
                         Shopping Cart
-                      </a>
-                      <a href="checkout.html" className="dropdown-item">
+                      </Link>
+                      <Link href="checkout.html" className="dropdown-item">
                         Checkout
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <a href="contact.html" className="nav-item nav-link">
                     Contact
+                  </a>
+                  <a href="/addCategory" className="nav-item nav-link">
+                    Add Category
+                  </a>
+                  <a href="/addItem" className="nav-item nav-link">
+                    Add Item
                   </a>
                 </div>
                 <div className="navbar-nav ml-auto py-0 d-none d-lg-block">

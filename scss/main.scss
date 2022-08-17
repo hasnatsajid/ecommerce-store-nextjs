@@ -14,3 +14,23 @@ svg {
   color: $primary;
   margin-right: 5px;
 }
+
+.shop {
+  .product-action {
+    .fa-heart,
+    .fa-cart-shopping,
+    .fa-trash {
+      color: #3d464d;
+      margin-right: 5px;
+    }
+
+    & > a:hover {
+      .fa-heart,
+      .fa-cart-shopping,
+      .fa-trash {
+        color: $primary;
+        margin-right: 5px;
+      }
+    }
+  }
+}

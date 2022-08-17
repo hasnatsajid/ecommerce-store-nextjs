@@ -5,6 +5,10 @@ const CategorySchema = new Schema({
     type: String,
     required: true,
   },
+  img: {
+    type: String,
+    required: true,
+  },
 });
 
 const Category = models.Category || model('Category', CategorySchema);
