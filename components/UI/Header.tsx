@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBars, faAngleDown, faAngleRight, faHeart, faShoppingCart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
+import type { RootState } from '../../store/store';
+import { useSelector, useDispatch } from 'react-redux';
+
 function Header() {
+  const count = useSelector((state: RootState) => state.counter.count);
+
   return (
     <div className="header">
       {/* <!-- Topbar Start --> */}
@@ -124,7 +129,7 @@ function Header() {
               href="#navbar-vertical"
               style={{ height: '65px', padding: '0 30px' }}
             >
-              <h6 className="text-dark m-0">
+              <h6 className="text-dark m-0 d-flex align-items-center">
                 <FontAwesomeIcon icon={faBars} className="fa-bars" />
                 Categories
               </h6>
@@ -223,13 +228,13 @@ function Header() {
                   <a href="" className="btn px-0">
                     <FontAwesomeIcon icon={faHeart} />
                     <span className="badge text-secondary border border-secondary rounded-circle" style={{ paddingBottom: '2px' }}>
-                      0
+                      {0}
                     </span>
                   </a>
                   <a href="" className="btn px-0 ml-3">
                     <FontAwesomeIcon icon={faCartShopping} />
                     <span className="badge text-secondary border border-secondary rounded-circle" style={{ paddingBottom: '2px' }}>
-                      0
+                      {count}
                     </span>
                   </a>
                 </div>

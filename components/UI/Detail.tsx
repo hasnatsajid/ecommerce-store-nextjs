@@ -1,6 +1,14 @@
 import React from 'react';
 
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+import { useDispatch } from 'react-redux';
+import { increment, decrement, incrementByAmount } from '../../store/slices/counter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function Detail() {
+  const dispatch = useDispatch();
+
   return (
     <div className="container-fluid pb-5">
       <div className="row px-xl-5">
@@ -120,14 +128,14 @@ function Detail() {
             <div className="d-flex align-items-center mb-4 pt-2">
               <div className="input-group quantity mr-3" style={{ width: '130px' }}>
                 <div className="input-group-btn">
-                  <button className="btn btn-primary btn-minus">
-                    <i className="fa fa-minus"></i>
+                  <button className="btn btn-primary btn-minus" onClick={() => dispatch(decrement())}>
+                    <FontAwesomeIcon icon={faMinus} />
                   </button>
                 </div>
                 <input type="text" className="form-control bg-secondary border-0 text-center" value="1" />
                 <div className="input-group-btn">
-                  <button className="btn btn-primary btn-plus">
-                    <i className="fa fa-plus"></i>
+                  <button className="btn btn-primary btn-plus" onClick={() => dispatch(increment())}>
+                    <FontAwesomeIcon icon={faPlus} />
                   </button>
                 </div>
               </div>
