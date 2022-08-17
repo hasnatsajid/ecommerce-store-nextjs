@@ -20,33 +20,26 @@ export default async function handler(req, res) {
     case 'POST':
       try {
         const newCategory = req.body;
-        console.log(newCategory);
-        // const categories = await Category.create(req.body, (err, newCategory) => {
-        //   if (err) {
-        //     console.log(err);
-        //   } else {
-        //     newCategory.save();
-        //   }
-        // });
-        // res.status(200).json({ success: true, data: categories });
-        res.status(201).json({ success: true, data: 'categories' });
+        const categories = await Category.create(newCategory);
+        res.status(201).json({ success: true, data: categories });
       } catch (err) {
         res.status(404).json({ success: false });
       }
       break;
     case 'PUT':
       try {
-        const { name } = req.body;
-        // const categories = await Category.updateOne({}, { $set: { name: name } });
-        res.status(200).json({ success: true, data: name });
+        const { oldName, newName } = req.body;
+        const categories = await Category.findOneAndUpdate({ name: oldName }, { $set: { name: newName } });
+        res.status(200).json({ success: true, data: newName });
       } catch (err) {
-        res.status(404).json({ success: false });
+        res.status(404).json({ success: false, error: err });
       }
       break;
     case 'DELETE':
       try {
-        // const categories = await Category.find({});
-        res.status(200).json({ success: true, data: 'Deleted' });
+        const { target } = req.body;
+        const categories = await Category.deleteOne({ name: target });
+        res.status(200).json({ success: true, data: categories });
       } catch (err) {
         res.status(404).json({ success: false });
       }
