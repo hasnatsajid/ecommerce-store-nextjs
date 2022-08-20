@@ -1,11 +1,22 @@
 import Head from 'next/head';
 
+import { useEffect } from 'react';
+
 import Layout from '../components/UI/Layout';
 import Featured from '../components/UI/Featured';
 import Categories from '../components/UI/Categories';
 
-export default function Home({ categories }) {
-  const { data } = categories;
+import categories from '../data/categories';
+import items from '../data/items';
+
+export default function Home() {
+  const categoriesData = categories.data;
+  const itemsData = items.data;
+
+  useEffect(() => {
+    localStorage.setItem('categories', JSON.stringify(categoriesData));
+    localStorage.setItem('items', JSON.stringify(itemsData));
+  }, []);
 
   return (
     <div className="app">
@@ -16,17 +27,17 @@ export default function Home({ categories }) {
       </Head>
       <Layout>
         <Featured />
-        <Categories categories={data} />
+        <Categories categories={categoriesData} />
       </Layout>
     </div>
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/categories');
-  const categories = await res.json();
+// export async function getServerSideProps() {
+//   const res = await fetch('http://localhost:3000/api/categories');
+//   const categories = await res.json();
 
-  return {
-    props: { categories },
-  };
-}
+//   return {
+//     props: { categories },
+//   };
+// }

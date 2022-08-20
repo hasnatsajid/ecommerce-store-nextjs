@@ -5,8 +5,10 @@ import Link from 'next/link';
 
 import type { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function Header() {
+  const [openPages, setOpenPages] = useState(false);
   const count = useSelector((state: RootState) => state.counter.count);
 
   return (
@@ -209,16 +211,16 @@ function Header() {
                   <a href="/detail" className="nav-item nav-link">
                     Shop Detail
                   </a>
-                  <div className="nav-item dropdown">
+                  <div className={`nav-item dropdown ${openPages && 'show'}`} onClick={() => setOpenPages((prev) => !prev)}>
                     <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
                       Pages <FontAwesomeIcon icon={faAngleDown} />
                     </a>
-                    <div className="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                      <Link href="cart.html" className="dropdown-item">
-                        Shopping Cart
+                    <div className={`dropdown-menu bg-primary rounded-0 border-0 m-0 ${openPages && 'show'}`}>
+                      <Link href="/cart">
+                        <a className="dropdown-item">Shopping Cart</a>
                       </Link>
-                      <Link href="checkout.html" className="dropdown-item">
-                        Checkout
+                      <Link href="/checkout">
+                        <a className="dropdown-item">Checkout</a>
                       </Link>
                     </div>
                   </div>

@@ -217,7 +217,7 @@ function Shop({ items }) {
 
             {items.map((item) => {
               return (
-                <div className="col-lg-4 col-md-6 col-sm-6 pb-1" key={item._id}>
+                <div className="col-lg-4 col-md-6 col-sm-6 pb-1" key={item.id}>
                   <div className="product-item bg-light mb-4">
                     <div className="product-img position-relative overflow-hidden">
                       <img className="img-fluid w-100" src={item.img} alt="" />
